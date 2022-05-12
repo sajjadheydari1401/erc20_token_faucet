@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .App-header {
@@ -16,4 +17,14 @@
 
 .App-intro {
   font-size: large;
+}
+
+.card-body {
+  flex: unset !important;
+}
+
+.alert {
+  width: 400px !important;
+  height: 70px !important;
+  margin-top: 20px;
 }

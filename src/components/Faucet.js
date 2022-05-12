@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 const goearliTokenAddress = "0xe1A7ed8F547C5faF033025A042238273014B8194";
 const ropstenTokenAddress = "0x9e9198346FE942ff733c9Ad9e21Ad332056B3d14";
 
-const Faucet = ({ tokenContract }) => {
+const Faucet = ({ tokenContract, setMessage, setError }) => {
   async function getToken() {
     if (typeof window.ethereum !== "undefined") {
       try {
@@ -30,8 +30,10 @@ const Faucet = ({ tokenContract }) => {
         const tx = await contract.requestTokens(account[0], 100);
         const receipt = await tx.wait();
         console.log("receipt", receipt);
+        setMessage("ERC20 Tokens successfully added to your wallet!");
       } catch (err) {
         console.log(err);
+        setError("Please retry after locktime");
       }
     }
   }
