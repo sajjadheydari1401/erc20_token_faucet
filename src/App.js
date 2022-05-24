@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Faucet from "./components/Faucet.js";
 import { useWeb3React } from "@web3-react/core";
-import { networkParams } from "./connectors/networks";
 import { connectors } from "./connectors/connector";
 import { toHex, truncateAddress } from "./utils";
 import FCTToken from "./artifacts/contracts/FCTToken.sol/FCTToken.json";
@@ -9,7 +8,6 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Container, Row, Col, Card, Button, Alert } from "react-bootstrap";
-import { ethers } from "ethers";
 
 function App() {
   const [error, setError] = useState("");
